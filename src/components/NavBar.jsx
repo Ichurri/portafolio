@@ -19,7 +19,7 @@ export const NavBar = () => {
                         <li><a onClick={() => closeMenu()} href='#home'>Home</a></li>
                         <li><a onClick={() => closeMenu()} href='#projects'>Projects</a></li>
                         <li><a onClick={() => closeMenu()} href='#skills'>Skills</a></li>
-                        <li><a onClick={() => closeMenu()} href='#about'>About me</a></li>
+                        <li><a onClick={() => closeMenu()} href='#about-me'>About me</a></li>
                     </ul>
                 </nav>
             </div>
