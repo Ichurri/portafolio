@@ -1,0 +1,86 @@
+:root {
+    --primary-color: #006DDD;
+    --secondary-color: #004388;
+    --background-color: #0d0d0d;
+    --text-color: #e4e4e4;
+    --card-background: #1c1c1c;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --card-hover-shadow: rgba(0, 0, 0, 0.4);
+    --transition-duration: 0.3s;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#skills {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+#skills .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#skills header h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: box-shadow var(--transition-duration);
+    flex: 1 1 300px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px var(--card-hover-shadow);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.card span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.mern-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+}

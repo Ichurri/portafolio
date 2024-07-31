@@ -1,3 +1,5 @@
+import '../styles/skills.css';
+
 export const Skills = () => {
     return (
         <>

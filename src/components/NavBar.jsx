@@ -1,3 +1,5 @@
+import '../styles/navBar.css';
+
 export const NavBar = () => {
     const closeMenu = () => {
         const hamburger = document.querySelector('.hamburger');
