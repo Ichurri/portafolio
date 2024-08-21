@@ -28,9 +28,10 @@ export const Skills = () => {
                         </div>
 
                         <div className="card">
-                            <img src="/assets/logos/mern.png" alt="Mern Logo" className="logo mern-logo" />
-                            <span>MERN</span>
-                            <p>I learned React and the MERN stack through the courses at Udemy, building dynamic and scalable web applications with components, state and lifecycle, integrating Node.js, Express and MongoDB for full stack development.</p>
+                            <img src="/assets/logos/react.png" alt="Mern Logo" className="logo" />
+                            <span>React JS</span>
+                            {/* <p>I learned React and the MERN stack through the courses at Udemy, building dynamic and scalable web applications with components, state and lifecycle, integrating Node.js, Express and MongoDB for full stack development.</p> */}
+                            <p>I learned React through courses at Udemy, building dynamic and scalable web applications with components, state and lifecycle</p>
                         </div>
 
                         <div className="card">
