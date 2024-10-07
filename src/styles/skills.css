@@ -1,24 +1,4 @@
-:root {
-    --primary-color: #006DDD;
-    --secondary-color: #004388;
-    --background-color: #0d0d0d;
-    --text-color: #e4e4e4;
-    --card-background: #1c1c1c;
-    --card-shadow: rgba(0, 0, 0, 0.2);
-    --card-hover-shadow: rgba(0, 0, 0, 0.4);
-    --transition-duration: 0.3s;
-    --border-radius: 8px;
-}
-
-body {
-    font-family: 'Roboto Mono', monospace;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General Styles for Skills Section */
 #skills {
     padding: 4rem 2rem;
     text-align: center;
@@ -27,6 +7,7 @@ body {
 #skills .wrapper {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 #skills header h2 {
@@ -35,21 +16,21 @@ body {
     color: var(--primary-color);
 }
 
+/* Cards grid layout */
 .cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     justify-content: center;
 }
 
+/* Card Styling */
 .card {
     background-color: var(--card-background);
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px var(--card-shadow);
-    transition: box-shadow var(--transition-duration);
-    flex: 1 1 300px;
-    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,30 +38,184 @@ body {
 }
 
 .card:hover {
+    transform: translateY(-10px);
     box-shadow: 0 8px 16px var(--card-hover-shadow);
 }
 
+/* Image Styling - Consistent size for all images */
 .logo {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 1rem;
+    width: 60px;
+    /* Set consistent width */
+    height: 60px;
+    /* Set consistent height */
+    margin-bottom: 1.5rem;
 }
 
+/* Title Styling - Consistent size for all spans */
 .card span {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    /* Adjusted consistent font size */
     font-weight: bold;
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
+/* Text Styling */
 .card p {
     font-size: 1rem;
     line-height: 1.5;
     color: var(--text-color);
+    padding: 0 1rem;
+    margin-bottom: 1rem;
 }
 
-/* .mern-logo {
-    width: 150px;
-    height: auto;
-    margin-bottom: 1rem;
-} */
+/* Responsive adjustments */
+
+/* For medium-sized screens (tablets, smaller laptops) */
+@media (max-width: 1024px) {
+    #skills {
+        padding: 3rem 1rem;
+    }
+
+    #skills header h2 {
+        font-size: 2.5rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* For small screens (mobile devices) */
+@media (max-width: 768px) {
+    #skills {
+        padding: 2rem 1rem;
+    }
+
+    #skills header h2 {
+        font-size: 2.2rem;
+    }
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Make cards smaller */
+        gap: 1rem; /* Reduce the gap between cards */
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .card span {
+        font-size: 1.3rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* For extra small screens (small phones, etc.) */
+@media (max-width: 480px) {
+    #skills {
+        padding: 1.5rem 0.5rem;
+    }
+
+    #skills header h2 {
+        font-size: 2rem;
+    }
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust further for small screens */
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .card span {
+        font-size: 1.1rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Animations for fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Flip-card styling */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    /* Perspectiva para el efecto 3D */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    /* Mantiene el 3D */
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    /* Rota en el eje Y al hacer hover */
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* Oculta la parte trasera al no estar girada */
+}
+
+.flip-card-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-background);
+    z-index: 2;
+    /* Poner la parte frontal delante */
+}
+
+.flip-card-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-background);
+    transform: rotateY(180deg);
+    /* La parte trasera está rotada 180 grados */
+}

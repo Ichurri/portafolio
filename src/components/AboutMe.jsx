@@ -10,7 +10,7 @@ export const AboutMe = () => {
                     </header>
                     <div className="content">
                         <div className="profile-container">
-                            <img src="/assets/images/profile.jpg" alt="Profile" className="profile-pic" />
+                            <img src="/assets/images/profile.jpeg" alt="Profile" className="profile-pic" />
                         </div>
                         <div className="text-container">
                             <p>
@@ -19,9 +19,8 @@ export const AboutMe = () => {
                             <div className="details">
                                 <ul>
                                     <li>System Engineer Student</li>
-                                    <li>Junior Front-End Stack</li>
                                     <li>Passionate Programmer</li>
-                                    <li>Contact: santiagoiturribsnss@gmail.com</li>
+                                    <li>Contact: santiagoiturrivargas04@gmail.com</li>
                                 </ul>
                             </div>
                         </div>
