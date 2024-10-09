@@ -13,7 +13,7 @@ export const skillsData = [
     },
     {
         logoSrcFront: '/assets/logos/html.png',
-        logoSrcBack: '/assets/logos/css.png', // La segunda imagen (CSS)
+        logoSrcBack: '/assets/logos/css.png',
         title: 'HTML/CSS',
         description: 'Proficient in building responsive and accessible web layouts using semantic HTML and modern CSS techniques.'
     },
@@ -25,19 +25,19 @@ export const skillsData = [
     },
     {
         logoSrcFront: '/assets/logos/javascript.png',
-        logoSrcBack: '/assets/logos/typescript.png', // La segunda imagen (TypeScript)
+        logoSrcBack: '/assets/logos/typescript.png', 
         title: 'JavaScript & TypeScript',
         description: 'Experienced with JavaScript and TypeScript, using OOP and asynchronous programming patterns.'
     },
     {
         logoSrcFront: '/assets/logos/nodejs.png',
-        logoSrcBack: '/assets/logos/expressjs.png', // La segunda imagen (Express.js)
+        logoSrcBack: '/assets/logos/expressjs.png', 
         title: 'Node.js & Express.js',
         description: 'Developing back-end services with Node.js and Express.js, focusing on API development.'
     },
     {
         logoSrcFront: '/assets/logos/sql.png',
-        logoSrcBack: null, // Sin segunda imagen
+        logoSrcBack: null, 
         title: 'SQL',
         description: 'Skilled in designing and querying relational databases using SQL for data management and analysis.'
     },
