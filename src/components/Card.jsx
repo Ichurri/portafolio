@@ -12,10 +12,11 @@ export const Card = ({ logoSrcFront, logoSrcBack, title, description }) => {
                         <div className="flip-logo-front">
                             <img src={logoSrcFront} alt={`${title} Logo Front`} className="logo" />
                         </div>
-                        {hasBackImage && (
-                            <div className="flip-logo-back">
-                                <img src={logoSrcBack} alt={`${title} Logo Back`} className="logo" />
-                            </div>
+                        {
+                            hasBackImage && (
+                                <div className="flip-logo-back">
+                                    <img src={logoSrcBack} alt={`${title} Logo Back`} className="logo" />
+                                </div>
                         )}
                     </div>
                 </div>
