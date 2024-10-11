@@ -10,172 +10,128 @@
     --border-radius: 8px;
 }
 
-body {
-    font-family: 'Roboto Mono', monospace;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body.no-scroll {
+    overflow: hidden;
 }
 
-/* NavBar */
 nav {
     background-color: var(--primary-color);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color var(--transition-duration);
 }
 
-nav .container {
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
+li {
+    margin: 0 1rem;
 }
 
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
+a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    transition: background-color var(--transition-duration), color var(--transition-duration);
+    font-size: 1.1rem;
 }
 
-nav ul li a:hover {
-    background-color: var(--secondary-color);
-    color: white;
-}
-
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 0;
-}
-
-.social-links a {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    text-decoration: none;
-    padding: 0.5rem;
-    display: inline-block;
-    position: relative;
-    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-}
-
-.social-links a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--secondary-color);
-    z-index: -1;
-    transition: transform 0.3s ease;
-    transform: scale(0);
-    border-radius: var(--border-radius);
-}
-
-.social-links a:hover::before {
-    transform: scale(1);
-}
-
-.social-links a:hover {
-    color: white;
-    transform: translateY(-5px);
-}
-
-.social-links a svg {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
+a:hover {
+    color: var(--secondary-color);
 }
 
 .hamburger {
     display: none;
-    cursor: pointer;
     flex-direction: column;
-    justify-content: space-between;
+    cursor: pointer;
     width: 30px;
     height: 24px;
+    justify-content: space-between;
 }
 
-.hamburger div {
-    width: 100%;
-    height: 4px;
+.hamburger span {
     background-color: var(--text-color);
+    height: 3px;
+    width: 100%;
+    transition: all 0.3s ease;
     border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
 }
 
-.hamburger.active div:nth-child(1) {
+.hamburger span.active:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
-.hamburger.active div:nth-child(2) {
+.hamburger span.active:nth-child(2) {
     opacity: 0;
 }
 
-.hamburger.active div:nth-child(3) {
+.hamburger span.active:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-content.active {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-content {
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--primary-color);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        transform: translateY(-20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        z-index: 999;
-    }
-
-    nav ul.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    nav ul li a {
-        font-size: 1.2rem;
         padding: 1rem;
-        width: 100%;
-        text-align: left;
     }
 
-    .hamburger {
-        display: flex;
-    }
-    .social-links {
-        justify-content: flex-start;
-        gap: 1rem;
+    .nav-content.active {
+        display: block;
     }
 
-    .social-links a {
-        font-size: 1.2rem;
+    ul {
+        flex-direction: column;
+        text-align: center;
     }
+
+    li {
+        margin: 1rem 0;
+    }
+
+    a {
+        font-size: 1.3rem;
+    }
+}
+
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
 }

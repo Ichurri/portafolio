@@ -1,4 +1,4 @@
-import '../styles/skills.css';
+import '../styles/Skills.css';
 
 export const Card = ({ logoSrcFront, logoSrcBack, title, description }) => {
 

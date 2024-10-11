@@ -1,4 +1,4 @@
-import '../styles/skills.css';
+import '../styles/Skills.css';
 import { Card } from './Card';
 import { skillsData } from '../helpers/skillsData';
 
@@ -15,11 +15,11 @@ export const Skills = () => {
                         {
                             skillsData.map((skill, index) => (
                                 <Card
-                                    key={index}
-                                    logoSrcFront={skill.logoSrcFront}
-                                    logoSrcBack={skill.logoSrcBack}
-                                    title={skill.title}
-                                    description={skill.description}
+                                    key={ index }
+                                    logoSrcFront={ skill.logoSrcFront }
+                                    logoSrcBack={ skill.logoSrcBack }
+                                    title={ skill.title }
+                                    description={ skill.description }
                                 />
                             ))
                         }
